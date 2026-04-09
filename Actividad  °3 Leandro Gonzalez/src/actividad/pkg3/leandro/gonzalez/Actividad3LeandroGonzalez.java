@@ -87,7 +87,7 @@ public class Actividad3LeandroGonzalez {
     
  
 
-
+/*
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -110,8 +110,51 @@ public class Actividad3LeandroGonzalez {
         System.out.println("Nivel: " + nivel);
         System.out.println("Dinero recibido: " + dinero + "€");
     }
-    
-    
+    */
+ 
+/*
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Ingrese la edad del cliente: ");
+        int edad = sc.nextInt();
+
+        if (edad < 4) {
+            System.out.println("Entrada gratis");
+        } else if (edad >= 4 && edad <= 18) {
+            System.out.println("Debe pagar 5€");
+        } else {
+            System.out.println("Debe pagar 10€");
+        }
+    }
+    */
+
+/*
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("¿Quiere una pizza vegetariana? (si/no): ");
+        String respuesta = sc.nextLine();
+
+        String ingrediente = "";
+
+        if (respuesta.equalsIgnoreCase("si")) {
+            System.out.println("Ingredientes vegetarianos: pimiento, tofu");
+            System.out.print("Elija un ingrediente: ");
+            ingrediente = sc.nextLine();
+
+            System.out.println("Pizza vegetariana con tomate, mozzarella y " + ingrediente);
+        } else {
+            System.out.println("Ingredientes no vegetarianos: peperoni, jamón, salmón");
+            System.out.print("Elija un ingrediente: ");
+            ingrediente = sc.nextLine();
+
+            System.out.println("Pizza no vegetariana con tomate, mozzarella y " + ingrediente);
+        }
+
+    }
+
+*/
     
 }
 
