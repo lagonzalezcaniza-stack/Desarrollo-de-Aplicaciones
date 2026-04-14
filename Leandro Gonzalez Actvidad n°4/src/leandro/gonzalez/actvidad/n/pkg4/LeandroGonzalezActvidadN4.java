@@ -49,7 +49,7 @@ public class LeandroGonzalezActvidadN4 {
             
     }
       */  
-    /*
+    /*Segundo Ejercicio 2a
      public static void main(String[] args) {
     Scanner teclado = new Scanner(System.in);
     int N = teclado.nextInt();
@@ -61,8 +61,52 @@ public class LeandroGonzalezActvidadN4 {
      }
         }
     */
-    /*
+    /*2b
      public static void main(String[] args) {
+    Scanner teclado = new Scanner(System.in);
+    int N = teclado.nextInt();
+    int N1= 1;
+        do{
+            System.out.println(N);
+            N1++;
+        } while (N1<= N);     
+     }
+     }
+     */
+  /*2c
+ public static void main(String[] args) {
+     Scanner teclado = new Scanner(System.in);
+     int N = teclado.nextInt();
+     for(int N1 = 1; N1<=N; N1++){
+      System.out.println(N);
+   }
+    }
+}
+*/
+   /*Tercer Ejericicio 3a
+    public static void main(String[] args) {
+     Scanner teclado = new Scanner(System.in);
+     int N = teclado.nextInt();
+     for(int N1 = 1; N1<=N; N--){
+      System.out.println(N);
+   }
+    }
+}
+*/
+    /*3b
+    public static void main(String[] args) {
+     Scanner teclado = new Scanner(System.in);
+     int N1 = teclado.nextInt();
+     int N= 1;
+        while(N1 >= N){
+            System.out.println(N1);
+            N1--;
+        }
+     }
+        }
+    */
+    /*3c
+ public static void main(String[] args) {
     Scanner teclado = new Scanner(System.in);
     int N = teclado.nextInt();
     int N1= 1;
@@ -73,25 +117,26 @@ public class LeandroGonzalezActvidadN4 {
      }
      }
      */
-  /*
- public static void main(String[] args) {
+    
+public static void main(String[] args) {
     Scanner teclado = new Scanner(System.in);
-    int N = teclado.nextInt();
-    int N1= 1;
-        while(N >= N1){
-            System.out.println(N);
-            N--;
+    int num1;
+    int num2;
+        do{
+    System.out.println("Ingrese el primer numero:");
+     num1 = teclado.nextInt();
+    System.out.println("Ingrese el segundo numero:");
+     num2 = teclado.nextInt();
+    if (num1 == num2){
+        System.out.println("Porfavor ingrese otra vez ambos numeros deben ser distintos");  
+    }
+ } while (num1==num2);
+        int min = Math.min(num1, num2);
+        int max = Math.max(num1, num2);
+        for (int a  =min ;a  <=max ; a++) {
+            System.out.println(a);
         }
-     }
-        }
-*/
-   
-    public static void main(String[] args) {
-     Scanner teclado = new Scanner(System.in);
-     Scanner sc = new Scanner(System.in);
-     int N = teclado.nextInt();
-     for(int N1 = 1; N1<=N; N--){
-      System.out.println(N);
-   }
     }
 }
+             
+               
