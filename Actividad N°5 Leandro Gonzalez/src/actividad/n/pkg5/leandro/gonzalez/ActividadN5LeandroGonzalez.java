@@ -215,6 +215,7 @@ public class ActividadN5LeandroGonzalez {
      }
 }
  */
+    /*7mo Ejercicio 
     public static void main(String[] args) {
      Scanner sc = new Scanner(System.in);
         String[] nombres;
@@ -263,8 +264,60 @@ public class ActividadN5LeandroGonzalez {
         }
     }
 }
- 
+ */
 
+
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Ingrese el valor minimo (desde): ");
+        int desde = sc.nextInt();
+        System.out.print("Ingrese el valor maximo (hasta): ");
+        int hasta = sc.nextInt();
+        System.out.print("Ingrese el tamano del array: ");
+        int tamano = sc.nextInt();
+
+        // Validacion basica para evitar bucle infinito
+        if ((hasta - desde + 1) < tamano) {
+            System.out.println("Error: El rango es muy pequeño para generar numeros sin repetir.");
+        } else {
+            int[] miArray = llenarArray(desde, hasta, tamano);
+
+            System.out.println("\nArray generado sin repeticiones:");
+            for (int i = 0; i < miArray.length; i++) {
+                System.out.print(miArray[i] + (i < miArray.length - 1 ? ", " : ""));
+            }
+            System.out.println();
+        }
+    }
+
+    public static int[] llenarArray(int desde, int hasta, int tamano) {
+        Random rnd = new Random();
+        int[] resultado = new int[tamano];
+        int i = 0;
+
+        while (i < tamano) {
+            // Formula solicitada: nextInt(hasta - desde + 1) + desde
+            int numAleatorio = rnd.nextInt(hasta - desde + 1) + desde;
+
+            if (!comprobarSiContiene(resultado, i, numAleatorio)) {
+                resultado[i] = numAleatorio;
+                i++;
+            }
+        }
+        return resultado;
+    }
+
+    public static boolean comprobarSiContiene(int[] array, int posicionActual, int num) {
+        for (int i = 0; i < posicionActual; i++) {
+            if (array[i] == num) {
+                return true;
+            }
+        }
+        return false;
+    }
+}
      
         
        
@@ -275,5 +328,5 @@ public class ActividadN5LeandroGonzalez {
  
 
     
-    
+ 
 
