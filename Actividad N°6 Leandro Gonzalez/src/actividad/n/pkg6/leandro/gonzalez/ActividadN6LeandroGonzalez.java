@@ -338,7 +338,118 @@ public class ActividadN6LeandroGonzalez {
     }
 }
 */
+/**2do metodo 
+     1b
+   static class Numero implements Comparable<Numero> {
+        private int valor;
 
+        public Numero(int valor) {
+            this.valor = valor;
+        }
+
+        public int getValor() { return valor; }
+
+
+        @Override
+        public int compareTo(Numero otro) {
+            return Integer.compare(this.valor, otro.valor);
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(valor);
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Numero[] vector = new Numero[10];
+        int pos = 0, neg = 0;
+        double sumaPos = 0, sumaNeg = 0;
+        
+        System.out.println("Introduce 10 numeros:");
+        for (int i = 0; i < 10; i++) {
+            System.out.print("Numero " + (i + 1) + ": ");
+            vector[i] = new Numero(sc.nextInt()); 
+        }
+
+        for (int i = 0; i < 10; i++) {
+            int v = vector[i].getValor();
+            if (v > 0) {
+                sumaPos += v;
+                pos++;
+            } else if (v < 0) {
+                sumaNeg += v;
+                neg++;
+            }
+        }
+
+        
+        Arrays.sort(vector);
+
+        System.out.println(" RESULTADOS (Vector ordenado de menor a mayor: " + Arrays.toString(vector) + ")");
+        if (pos > 0) {
+            System.out.println("Media de positivos: " + (sumaPos / pos));
+        } else {
+            System.out.println("No se introdujeron numeros positivos.");
+        }
+
+        if (neg > 0) {
+            System.out.println("Media de negativos: " + (sumaNeg / neg));
+        } else {
+            System.out.println("No se introdujeron numeros negativos.");
+        }
+    }
+} 
+*/
+    
+/**2do metodo 
+     2b
+    static class Elemento {
+        private int valor;
+
+        public Elemento(int valor) {
+            this.valor = valor;
+        }
+
+        public int getValor() { return valor; }
+
+        @Override
+        public String toString() {
+            return String.valueOf(valor);
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Elemento[] vector = new Elemento[10];
+        int suma = 0;
+        int contador = 0;
+        
+        System.out.println("Introduce 10 números:");
+        for (int i = 0; i < 10; i++) {
+            System.out.print("Número " + (i + 1) + ": ");
+            vector[i] = new Elemento(sc.nextInt());
+        }
+        
+        // Ordenamos un rango del array de objetos usando Comparator (Lambda)
+        Arrays.sort(vector, 0, 5, (a, b) -> Integer.compare(a.getValor(), b.getValor()));
+        System.out.println("\nVector con la primera mitad ordenada: " + Arrays.toString(vector));
+
+        for (int i = 0; i < 10; i++) {
+            if (i % 2 == 0) {
+                suma += vector[i].getValor();
+                contador++;
+            }
+        }
+
+        double media = (double) suma / contador;
+        System.out.println("La media de las posiciones pares es: " + media);
+    }
+*/
+    
+
+    
 /**2do metodo 
      3b
 class Alumno implements Comparable<Alumno> {
@@ -409,57 +520,226 @@ class Alumno implements Comparable<Alumno> {
 }
 
 */
+    
+    static class NumeroPar {
+        private int valor;
 
+        public NumeroPar(int valor) {
+            this.valor = valor;
+        }
 
-class Empleado {
-    private String nombre;
-    private double sueldo;
+        public int getValor() { return valor; }
 
-    public Empleado(String nombre, double sueldo) {
-        this.nombre = nombre;
-        this.sueldo = sueldo;
+        @Override
+        public String toString() {
+            return String.valueOf(valor);
+        }
     }
 
-    public String getNombre() { return nombre; }
-    public double getSuendo() { return sueldo; }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        NumeroPar[] pares = new NumeroPar[20];
+        int contador = 0; 
+        
+        System.out.println("Ingresa números:");
+        while (contador < 20) {
+            System.out.print("Ingresa un número: ");
+            int num = sc.nextInt();
 
-    @Override
-    public String toString() {
-        return "Nombre: " + nombre + " | Sueldo: $" + sueldo;
+            if (num % 2 == 0) {
+                pares[contador] = new NumeroPar(num);
+                contador++;
+            }
+        }
+        Arrays.sort(pares, (n1, n2) -> Integer.compare(n2.getValor(), n1.getValor()));
+        
+        System.out.println("\nNúmeros pares ingresados (ordenados de mayor a menor):");
+        for (int i = 0; i < 20; i++) {
+            System.out.println(pares[i]);
+        }
     }
 }
+   
 
-public class Ejercicio8Comparator {
+
+
+    /**2do metodo 
+     8b
+    static class DatosEmpleado {
+        private String nombre;
+        private double sueldo;
+
+        public DatosEmpleado(String nombre, double sueldo) {
+            this.nombre = nombre;
+            this.sueldo = sueldo;
+        }
+
+        public String getNombre() { return nombre; }
+        public double getSueldo() { return sueldo; }
+
+        @Override
+        public String toString() {
+            return "Nombre: " + nombre + " | Sueldo: $" + sueldo;
+        }
+    }
+
+  
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
-        Empleado[] empleados = new Empleado[20]; // Array de objetos Empleado
+        
+        
+        DatosEmpleado[] empleados = new DatosEmpleado[20];
 
-        // Lectura de los 20 empleados
+     
         for (int i = 0; i < 20; i++) {
             System.out.println("Empleado " + (i + 1) + ":");
             System.out.print("Nombre: ");
             String nombre = teclado.nextLine();
             System.out.print("Sueldo: ");
             double sueldo = teclado.nextDouble();
-            teclado.nextLine(); // Limpiar buffer
-
-            empleados[i] = new Empleado(nombre, sueldo);
+            teclado.nextLine(); 
+            
+          
+            empleados[i] = new DatosEmpleado(nombre, sueldo);
         }
 
-        // Ordenamos usando un Comparator con una expresión Lambda
-        // (b, a) en lugar de (a, b) hace que se ordene de MAYOR a MENOR de forma automática
-        Arrays.sort(empleados, (e1, e2) -> Double.compare(e2.getSuendo(), e1.getSuendo()));
+       
+        Arrays.sort(empleados, (e1, e2) -> Double.compare(e2.getSueldo(), e1.getSueldo()));
 
-        // El empleado con mayor sueldo siempre será el primero (índice 0) gracias al ordenamiento descendente
-        System.out.println("\n--- Empleado con mayor sueldo ---");
+        System.out.println(" Empleado con mayor sueldo ");
         System.out.println(empleados[0]);
 
-        // BONUS: Mostramos toda la lista ya ordenada por si quieres comprobarlo
-        System.out.println("\n--- Lista completa de empleados (De mayor a menor sueldo) ---");
-        for (Empleado emp : empleados) {
-            System.out.println(emp);
+        System.out.println(" Lista completa (de mayor a menor sueldo) ");
+        for (int i = 0; i < 20; i++) {
+            System.out.println(empleados[i]);
         }
     }
 }
+*/
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+     /**3er metodo 
+     8c
+     
+    public static void main(String[] args) {
+    Scanner teclado = new Scanner(System.in);
+    
+    String[] nombres = new String[20];
+    double[] sueldos = new double[20];
+
+    for (int i = 0; i < 20; i++) {
+        System.out.println("Empleado " + (i + 1) + ":");
+        System.out.print("Nombre: ");
+        nombres[i] = teclado.nextLine();
+        System.out.print("Sueldo: ");
+        sueldos[i] = teclado.nextDouble();
+        teclado.nextLine();
+    }
+
+    // Ordenar de mayor a menor sueldo (burbuja)
+    for (int i = 0; i < 20 - 1; i++) {
+        for (int j = 0; j < 20 - 1 - i; j++) {
+            if (sueldos[j] < sueldos[j + 1]) {
+                // Intercambiar sueldos
+                double tempSueldo = sueldos[j];
+                sueldos[j] = sueldos[j + 1];
+                sueldos[j + 1] = tempSueldo;
+                // Intercambiar nombres también
+                String tempNombre = nombres[j];
+                nombres[j] = nombres[j + 1];
+                nombres[j + 1] = tempNombre;
+            }
+        }
+    }
+
+    System.out.println("\n--- Empleado con mayor sueldo ---");
+    System.out.println("Nombre: " + nombres[0] + " | Sueldo: $" + sueldos[0]);
+
+    System.out.println("\n--- Lista completa (de mayor a menor sueldo) ---");
+    for (int i = 0; i < 20; i++) {
+        System.out.println("Nombre: " + nombres[i] + " | Sueldo: $" + sueldos[i]);
+    }
 }
+}
+*/
 
