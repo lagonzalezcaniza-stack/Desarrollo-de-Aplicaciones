@@ -3272,7 +3272,7 @@ class Alumno implements Comparable<Alumno> {
         i = izq; j = m + 1; k = izq;
         while (i <= m && j <= der) {
             if (auxSueldos[i] >= auxSueldos[j]) { // Descendente
-                S[k] = auxSuelledos[i];
+                S[k] = auxSueldos[i];
                 N[k] = auxNombres[i];
                 i++;
             } else {
@@ -3290,7 +3290,8 @@ class Alumno implements Comparable<Alumno> {
     }
 }
 */
-
+ /**8vo metodo 
+     9h
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -3363,3 +3364,4 @@ class Alumno implements Comparable<Alumno> {
         return false;
     }
 }
+*/
